@@ -11,5 +11,5 @@ class Link(models.Model):
 
 class LinkOpening(models.Model):
     opener_ip_address = models.GenericIPAddressField()
-    link_id = models.ForeignKey(Link, on_delete=models.CASCADE)
+    link = models.ForeignKey(Link, on_delete=models.CASCADE)
     open_datetime = models.DateTimeField()
