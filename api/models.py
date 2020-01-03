@@ -1,10 +1,8 @@
-from datetime import datetime
-
 from django.db import models
 
 
 class Link(models.Model):
-    short_url = models.CharField(max_length=6)
+    short_url = models.CharField(max_length=6, unique=True)
     redirect_location = models.CharField(max_length=256)
     expiration_date = models.DateTimeField(null=True)
     created = models.DateTimeField()
